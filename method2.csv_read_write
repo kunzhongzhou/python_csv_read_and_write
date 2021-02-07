@@ -1,0 +1,17 @@
+##2 使用csv进行读写
+#read
+import csv
+
+with open('test.csv', 'r') as csvfile:
+    spamreader = csv.reader(csvfile)
+    for row in spamreader:
+        print(row)# type of row: list
+
+#write
+#使用pandas将dictionary写入csv文件，按列写入
+import csv
+
+with open('new.csv','w') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['country','language'])
+    #这里要以list形式写入，writer会在新建的csv文件中，一行一行写入
